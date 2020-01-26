@@ -4,6 +4,7 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 remaps &		# run the remaps script, switching caps/esc and more; check it for more info
+numlockx &		# turn on num lock
 setbg &			# set the background with the `setbg` script
 xcompmgr &		# xcompmgr for transparency
 $STATUSBAR &		# script for updating the status bar
