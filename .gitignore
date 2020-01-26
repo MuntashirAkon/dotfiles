@@ -1,0 +1,19 @@
+# dot files
+.calcurse
+.ssh
+.mozilla
+.dbus
+.cache
+.config/libreoffice
+.config/mpd
+!.config/mpd/mpd.conf
+.config/neofetch
+.config/ncmpcpp/error.log
+.config/zsh/.zcompdump
+
+# others
+Documents
+Downloads
+Music
+Movies
+
