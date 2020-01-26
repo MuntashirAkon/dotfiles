@@ -9,6 +9,11 @@ PS1="%B%(?.%{$fg[green]%}.%{$fg[red]%})[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[bl
 
 autoload -U compinit
 zstyle ':completion:*' menu select
+# case insensitive path-completion
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+# partial completion suggestions
+zstyle ':completion:*' list-suffixes
+zstyle ':completion:*' expand prefix suffix
 zmodload zsh/complist
 compinit
 
