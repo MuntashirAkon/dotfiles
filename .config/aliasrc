@@ -3,6 +3,9 @@
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
+# Use macOS-like open instead of xdg-open
+command -v xdg-open >/dev/null && alias open="xdg-open"
+
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
 	bat="cat /sys/class/power_supply/BAT?/capacity" \
