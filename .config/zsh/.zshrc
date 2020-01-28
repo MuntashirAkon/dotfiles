@@ -72,5 +72,9 @@ lfcd () {
 
 bindkey -s '^o' 'lfcd\n'  # zsh
 
+# Load tmux
+#[ -z "$TMUX" ] && command -v tmux >/dev/null && [ $TERM = "st-256color" ] && exec tmux
+[ "$TERM" = "st-256color" ] && [[ $DISPLAY ]] && [[ $- = *i* ]] && [[ -z "$TMUX" ]] && exec tmux
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
