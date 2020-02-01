@@ -20,6 +20,11 @@ compinit
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 
+# Remember last 1000 history
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=$ZDOTDIR/.history
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
