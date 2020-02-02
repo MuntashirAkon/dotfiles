@@ -65,7 +65,7 @@ configuration {
 
 #window {
     /* fullscreen:true; */
-    /* location: west; */
+    location: center;
     /* anchor: west; */
     border: 0;
     border-radius: 10px;
@@ -83,7 +83,7 @@ configuration {
 
 
 #listview {
-    fixed-height: 0;
+    /* fixed-height: 0; */
     border: 0;
     spacing: 5;
     scrollbar: false;

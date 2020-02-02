@@ -5,7 +5,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$
 
 # Get default LARBS WM from ~/.local/share/larbs/wm
 export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
-	[ "$LARBSWM" = "dwm" ] || export LARBSWM="i3"
+    [ "$LARBSWM" = "dwm" ] || export LARBSWM="i3"
 
 # Default programs:
 export EDITOR="nvim"
@@ -27,7 +27,11 @@ export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+if ls -l `which dmenu` | grep 'rofi'; then
+    export SUDO_ASKPASS="$HOME/.local/bin/rofipass"
+else
+    export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+fi
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
