@@ -92,8 +92,8 @@ bindsym $mod+Shift+o		exec --no-startup-id i3resize right
 bindsym $mod+p			exec --no-startup-id mpc toggle
 bindsym $mod+Shift+p		exec --no-startup-id mpc pause
 
-bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
-bindsym $mod+Shift+a		exec $term -e pulsemixer
+bindsym $mod+a			exec $term -e alsamixer
+bindsym $mod+Shift+a		exec $term -e htop
 
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
@@ -133,8 +133,8 @@ bindsym $mod+Shift+z		gaps outer current minus 5
 bindsym $mod+x			exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv ; exec --no-startup-id i3lock -e -f -c 1d2021 ; exec --no-startup-id xset dpms force off
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 
-bindsym $mod+c			exec --no-startup-id cabl
-bindsym $mod+Shift+c		exec --no-startup-id camtoggle
+bindsym $mod+c			exec $term -e calcurse -D ~/.config/calcurse
+bindsym $mod+Shift+c		exec --no-startup-id mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title=mpvfloat /dev/video0
 
 bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
 #bindsym $mod+Shift+v
