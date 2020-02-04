@@ -1,0 +1,13 @@
+#!/bin/sh
+# A dmenu/rofi script to sleep, hibernate, shutdown, restart computer
+
+choice="$(printf "Idle\\nSleep\\nHibernate\\nShutdown\\nRestart" | dmenu -i -p "Power Options")"
+
+case $choice in
+    Idle) sudo -A zzz -S ;;
+    Sleep) sudo -A zzz -z ;;
+    Hibernate) sudo -A zzz -Z ;;
+    Shutdown) sudo -A shutdown -h now ;;
+    Restart) sudo -A shutdown -r now ;;
+esac
+

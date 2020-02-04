@@ -49,7 +49,7 @@ super + Insert
 super + shift + x
 	prompt "Shutdown computer?" "sudo -A shutdown -h now"
 super + shift + BackSpace
-	prompt "Reboot computer?" "sudo -A reboot"
+	dmenupower
 super + shift + Escape
 	prompt 'Leave Xorg?' 'killall Xorg'
 super + x
@@ -121,7 +121,7 @@ XF86AudioMedia
 	$TERMINAL -e ncmpcpp
 
 XF86PowerOff
-	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+	dmenupower
 XF86Calculator
 	$TERMINAL -e bc
 XF86Sleep
