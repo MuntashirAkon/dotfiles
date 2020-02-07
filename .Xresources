@@ -1,0 +1,16 @@
+#include ".colors/empire"
+
+!! Fonts
+#define fonts xft:Hack:pixelsize=12,\
+              xft:FontAwesome:size=12,\
+              xft:Dejavu Sans:style=book:size=14
+
+st.font:              Hack:pixelsize=12;
+
+!!-- Xft settings -- !
+!Xft.dpi:        96
+!Xft.antialias:  true
+!Xft.rgba:       rgb
+!Xft.hinting:    true
+!Xft.hintstyle:  hintfull
+

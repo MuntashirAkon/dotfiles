@@ -1,0 +1,42 @@
+! Bg !
+
+! Grey bg
+*background: #2b161c
+*color0: #351920
+
+! Primary bg
+*color6: #d3383a
+*color2: #ee6f3d
+*color14: #d64f3a
+
+! Secondary bg
+*color5: #6e224a
+*color4: #813c55
+*color13: #7f2253
+
+! Error bg
+*color1: #ba2637
+*color9: #d82b3e
+*color3: #f4b140
+
+! Text !
+
+! Text grey
+*foreground: #fae696
+*color8: #e7c56c
+
+! Text primary
+*color10: #eb845c
+*color7: #ecd67f
+
+! Text secondary
+*color12: #913f5d
+*color15: #f9e7a0
+
+! Text error
+*color11: #3c1d25
+
+! Rofi !
+rofi.color-normal: argb:00000000, #f4b140, argb:00000000, #351920, #e7c56c
+rofi.color-window: #2b161c, #000000, #832757
+
