@@ -51,15 +51,16 @@ configuration {
 
 * {
     xbs: #dddddd10;
-    xfs: #a1bf78;
-    xbg: #000000ff;
-    xfg: #eeeeee;
+    xfs: ${GREEN};
+    xbg: ${BACKGROUND};
+    xfg: ${FOREGROUND};
     xnone: #00000000;
+    xwhite: ${WHITE};
 }
 * {
     columns: 1;
     background-color: @xbg;
-    border-color: @xnone;
+    border-color: @xwhite;
     text-color: @xfg;
 }
 
@@ -67,7 +68,7 @@ configuration {
     /* fullscreen:true; */
     location: center;
     /* anchor: west; */
-    border: 0;
+    border: 1;
     border-radius: 10px;
     padding: 20;
     /* width: 30%; */
@@ -111,20 +112,20 @@ configuration {
 }
 
 #entry {
-    text-color: #a1bf78;
+    text-color: @xfs;
     spacing: 0;
     background-color: @xnone;
 }
 
 #prompt {
-    text-color: #a1bf78;
+    text-color: @xfs;
     spacing: 0;
     background-color: @xnone;
 }
 
 #textbox-prompt-colon {
     background-color: @xnone;
-    text-color: #a1bf78;
+    text-color: @xfs;
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
