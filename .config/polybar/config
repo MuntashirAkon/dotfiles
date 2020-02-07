@@ -25,8 +25,8 @@ blue = ${xrdb:color12:#83a598}
 magenta = ${xrdb:color13:#d3869b}
 cyan = ${xrdb:color14:#8ec07c}
 white = ${xrdb:color15:#ebdbb2}
-background = ${xrdb:color256:#1d2021}
-foreground = ${xrdb:color257:#ebdbb2}
+background = ${xrdb:background:#1d2021}
+foreground = ${xrdb:foreground:#ebdbb2}
 
 [bar/default]
 ;monitor = ${env:MONITOR:LVDS-1}
@@ -43,7 +43,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = {$xrdb:red}
+line-color = {$colors.red}
 
 border-size = 0
 border-color = ${colors.white}
@@ -93,7 +93,7 @@ interval = 5000
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:45:...%
-format-foreground = ${colors.blue}
+format-foreground = ${colors.darkyellow}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -121,7 +121,7 @@ label-unmounted-foreground = ${colors.gray}
 [module/bspwm]
 type = internal/bspwm
 label-focused = %index%
-label-focused-foreground = ${colors.black}
+label-focused-foreground = ${colors.gray}
 label-focused-background = ${colors.blue}
 label-focused-underline= ${colors.darkyellow}
 label-focused-padding = 1
@@ -172,7 +172,8 @@ click-right = mpc toggle >/dev/null 2>&1
 label-song =  %artist% - %title%
 label-song-maxlen = 70
 label-song-ellipsis = true
-format-paused-foreground = ${colors.gray}
+format-paused-foreground = ${colors.darkcyan}
+format-playing-foreground = ${colors.gray}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -217,10 +218,11 @@ interval = 3.0
 format-connected = 直 <label-connected>
 ;format-connected-underline = ${colors.darkmagenta}
 label-connected = %essid% %downspeed% %upspeed%
+format-connected-foreground = ${colors.gray}
 format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = 睊no wifi
-label-disconnected-foreground = ${colors.gray}
+label-disconnected = 睊 No Wifi
+label-disconnected-foreground = ${colors.darkcyan}
 ; <ramp-signal>
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -250,7 +252,7 @@ interval = 45
 date = "%a %b %d"
 time = "%H:%M"
 ;format-prefix = " "
-;format-prefix-foreground = ${colors.gray}
+format-foreground = ${colors.gray}
 ;format-underline = ${colors.blue}
 label = %date% %time%
 
@@ -258,26 +260,28 @@ label = %date% %time%
 type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
-format-muted-prefix = 🔇
-format-muted-foreground = ${colors.gray}
-label-muted = %percentage%%
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+format-volume-foreground = ${colors.gray}
+format-muted-foreground = ${colors.darkcyan}
+label-muted =  %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+;ramp-volume-foreground = ${colors.gray}
 
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP1
-full-at = 98
+adapter = AC
+;full-at = 98
+label-full-foreground = ${colors.gray}
 format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.gray}
 ;format-charging-underline = ${colors.darkyellow}
-;format-discharging = <label-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.gray}
 ;format-discharging-underline = ${self.format-charging-underline}
-format-full-prefix = " "
-;format-full-prefix-foreground = ${colors.gray}
+format-full-prefix = " "
+format-full-foreground = ${colors.gray}
 ;format-full-underline = ${self.format-charging-underline}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -314,11 +318,13 @@ ramp-foreground = ${colors.gray}
 [module/powermenu]
 type = custom/text
 content = 
+content-foreground = ${colors.gray}
 click-left = dmenupower >/dev/null 2>&1
 
 [module/lockmenu]
 type = custom/text
 content = 
+content-foreground = ${colors.gray}
 click-left = dmenulock >/dev/null 2>&1
 
 [settings]
