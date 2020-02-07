@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+export BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+export BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+export RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+export GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+export YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+export BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+export MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+export CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+export WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+
+

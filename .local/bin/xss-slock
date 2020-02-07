@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# A simple script to turn off the screen after slock is activated
+slock &
+sleep 1 && xset dpms force off
+
