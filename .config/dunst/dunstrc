@@ -1,16 +1,30 @@
+###################################
+#
+# Config file created with
+# dunst_xr_theme_changer.sh wrapper
+#
+###################################
+
+###################################
+#
+# Config file created with
+# dunst_xr_theme_changer.sh wrapper
+#
+###################################
+
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "350x5-0+24"
+    geometry = "350x5-8+32" # "350x5-0+24"
     indicate_hidden = yes
-    shrink = yes
-    transparency = 20
+    shrink = no
+    transparency = 5
     notification_height = 0
     separator_height = 2
-    padding = 0
+    padding = 8
     horizontal_padding = 8
-    frame_width = 3
-    frame_color = "#282828"
+    frame_width = 1
+    frame_color = "#e7c56c"
 
     # Define a color for the separator.
     # possible values are:
@@ -18,13 +32,13 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = auto
 
     # Sort messages by urgency.
     sort = yes
 
     idle_threshold = 120
-    font = Monospace 14
+    font = Monospace 11
     line_height = 0
     markup = full
 
@@ -75,21 +89,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282828"
-    foreground = "#928374"
+    background = "#351920"
+    foreground = "#813c55"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#458588"
-    foreground = "#ebdbb2"
+    background = "#351920"
+    foreground = "#ee6f3d"
     timeout = 5
 
 [urgency_critical]
-    background = "#cc2421"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
+    background = "#351920"
+    foreground = "#ba2637"
+    frame_color = "#ba2637"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to
