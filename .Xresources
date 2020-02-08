@@ -5,7 +5,9 @@
               xft:FontAwesome:size=12,\
               xft:Dejavu Sans:style=book:size=14
 
+!! st
 st.font:              Hack:pixelsize=12;
+st.bold_font:         1
 
 !!-- Xft settings -- !
 !Xft.dpi:        96
