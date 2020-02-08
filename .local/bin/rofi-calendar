@@ -1,0 +1,31 @@
+#! /bin/sh
+
+year=$(date '+%Y')
+month=$(date '+%m')
+date=$(date '+%a, %d %b %Y')
+
+cal --color=always $month $year \
+    | sed 's/\x1b\[[7;]*m/\<b\>\<u\>/g' \
+    | sed 's/\x1b\[[27;]*m/\<\/u\>\<\/b\>/g' \
+    | sed 's/\(.*\)/ \1/g' \
+    | tail -n +2 \
+    | rofi \
+        -dmenu \
+        -markup-rows \
+        -no-fullscreen \
+        -hide-scrollbar \
+        -location 3 -xoffset 0 -yoffset 24 \
+        -no-custom \
+        -bw 2 \
+        -m -1 \
+        -eh 1 \
+        -u 0 \
+        -width -22 \
+        -p "$date" \
+        -theme-str "#mainbox{children: [listview];} #window{border: 1 0 0 0; height: 160; border-radius: 0 0 10 10;}" \
+        -color-normal "$BACKGROUND,$FOREGROUND,$BACKGROUND,$BACKGROUND,$FOREGROUND" \
+        -color-urgent "$GREEN,$FOREGROUND,$GREEN,$GREEN,$FOREGROUND" \
+        -color-window "$BACKGROUND,$FOREGROUND,$BACKGROUND" \
+        -no-config \
+        -no-plugins > /dev/null 
+

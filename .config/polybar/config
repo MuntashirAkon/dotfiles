@@ -247,14 +247,12 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.gray}
 
 [module/date]
-type = internal/date
-interval = 45
-date = "%a %b %d"
-time = "%H:%M"
-;format-prefix = " "
+type = custom/script
+interval = 30
+exec = date '+%a %b %d %H:%M'
+format = <label>
 format-foreground = ${colors.gray}
-;format-underline = ${colors.blue}
-label = %date% %time%
+click-left = pkill rofi-calendar || rofi-calendar >/dev/null 2>&1
 
 [module/volume]
 type = internal/alsa
