@@ -2,13 +2,44 @@
 
 export FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
 export BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+# Dark colors
 export BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
-export RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
-export GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
-export YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
-export BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
-export MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
-export CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
-export WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
-
-
+export DARKRED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+export DARKGREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+export DARKYELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+export DARKBLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+export DARKMAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+export DARKCYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+# Shades of gray
+export LIGHTGRAY=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+export GRAY=$(xrdb -query | grep 'color8:'| awk '{print $NF}')
+# Normal colors
+export RED=$(xrdb -query | grep 'color9:'| awk '{print $NF}')
+export GREEN=$(xrdb -query | grep 'color10:'| awk '{print $NF}')
+export YELLOW=$(xrdb -query | grep 'color11:'| awk '{print $NF}')
+export BLUE=$(xrdb -query | grep 'color12:'| awk '{print $NF}')
+export MAGENTA=$(xrdb -query | grep 'color13:'| awk '{print $NF}')
+export CYAN=$(xrdb -query | grep 'color14:'| awk '{print $NF}')
+export WHITE=$(xrdb -query | grep 'color15:'| awk '{print $NF}')
+# Defaults
+FOREGROUND="${FOREGROUND:-#ebdbb2}"
+BACKGROUND="${BACKGROUND:-#1d2021}"
+BLACK="${BLACK:-#1d2021}"
+DARKRED="${DARKRED:-#cc241d}"
+DARKGREEN="${DARKGREEN:-#98971a}"
+DARKYELLOW="${DARKYELLOW:-#d79921}"
+DARKBLUE="${DARKBLUE:-#458588}"
+DARKMAGENTA="${DARKMAGENTA:-#b16286}"
+DARKCYAN="${DARKCYAN:-#689d6a}"
+LIGHTGRAY="${LIGHTGRAY:-#a89984}"
+GRAY="${GRAY:-#928374}"
+RED="${RED:-#fb4934}"
+GREEN="${GREEN:-#b8bb26}"
+YELLOW="${YELLOW:-#fabd2f}"
+BLUE="${BLUE:-#83a598}"
+MAGENTA="${MAGENTA:-#d3869b}"
+CYAN="${CYAN:-#8ec07c}"
+WHITE="${WHITE:-#ebdbb2}"
+# Alternative names
+export LIGHTGREY="$LIGHTGRAY"
+export GREY="$GRAY"
