@@ -255,7 +255,7 @@ format-foreground = ${colors.gray}
 click-left = pkill rofi-calendar || rofi-calendar >/dev/null 2>&1
 
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
 format-volume-foreground = ${colors.gray}
