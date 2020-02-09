@@ -5,7 +5,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$
 
 # Get default LARBS WM from ~/.local/share/larbs/wm
 export LARBSWM="$(cat ~/.local/share/larbs/wm 2>/dev/null)" &&
-    [ "$LARBSWM" = "dwm" ] || export LARBSWM="i3"
+    ( [ "$LARBSWM" = "dwm" ] ||  [ "$LARBSWM" = "bspwm" ] ) || export LARBSWM="i3"
 
 # Default programs:
 export EDITOR="nvim"
@@ -13,7 +13,7 @@ export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
-export STATUSBAR="${LARBSWM}blocks"
+[ "$LARBSWM" = "bspwm" ] || export STATUSBAR="${LARBSWM}blocks"
 
 # ~/ Clean-up:
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
