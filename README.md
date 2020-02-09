@@ -1,4 +1,29 @@
-# The Voidrice (Luke Smith <https://lukesmith.xyz>'s dotfiles)
+# The Voidrice
+
+**NOTE:** This repo doesn't strictly follow LARBS (shortcut's are still kept the same/similar). My preferred WM is `bspwm` and status bar is `polybar`.
+
+Additionl Prerequisites:
+- (AUR) polybar (Optional, if you want to use bspwm)
+- bspwm (Optional)
+- zzz (Optional, comes default with runit systems, without it sleep and hibernate won't work)
+- rofi (dmenu replacement)
+- (AUR) rofi-dmenu (dmenu compatibility)
+- xss-lock
+- xorg-appres (x11-utils for debian) (Optional, for changing dunst theme based on current Xresources). To convert your current `dunstrc`, run the following:
+  ```sh
+  dunst_xr_theme_changer.sh && mv -f ~/.config/dunst/dunstrc{_xr_colors,}
+  ```
+- picom (you can remove xcompmgr)
+- pulseaudio (`amixer` is still used for volume control)
+- (AUR) pulseaudio-alsa
+
+Other changes:
+- Themes can be added (located at `~/.colors`) at `~/.Xresources` (current theme is `empire`)
+- Some additional shortcuts added (see at `~/.config/sxhkd/sxhkdrc`)
+
+And don't be a fool and replace the crappy (Chromium based) Brave browser with hardened Firefox.
+
+**By the original author**
 
 These are the dotfiles deployed by [LARBS](https://larbs.xyz) and as seen on [my YouTube channel](https://youtube.com/c/lukesmithxyz).
 
