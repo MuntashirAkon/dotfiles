@@ -78,7 +78,7 @@ scroll-down = bspwm-deskprev
 
 [module/mutt-wizard]
 type = custom/script
-exec = mailbox
+exec = mailbox 2>/dev/null
 interval = 5
 format-prefix = " "
 ;format-underline = ${colors.red}
