@@ -1,0 +1,149 @@
+alt_send_esc: true
+background_opacity: 1.0
+colors:
+  bright:
+    black: '#e7c56c'
+    blue: '#913f5d'
+    cyan: '#d64f3a'
+    green: '#eb845c'
+    magenta: '#7f2253'
+    red: '#d82b3e'
+    white: '#f9e7a0'
+    yellow: '#3c1d25'
+  normal:
+    black: '#351920'
+    blue: '#813c55'
+    cyan: '#d3383a'
+    green: '#ee6f3d'
+    magenta: '#6e224a'
+    red: '#ba2637'
+    white: '#ecd67f'
+    yellow: '#f4b140'
+  primary:
+    background: '#2b161c'
+    foreground: '#fae696'
+cursor:
+  style: Block
+  unfocused_hollow: true
+debug:
+  log_level: Warn
+  persistent_logging: false
+  print_events: false
+  ref_test: false
+  render_timer: false
+draw_bold_text_with_bright_colors: true
+dynamic_title: true
+env:
+  TERM: xterm-256color
+  WINIT_HIDPI_FACTOR: '1'
+font:
+  bold:
+    family: Hack
+    style: Bold
+  bold_italic:
+    family: Hack
+    style: Bold Italic
+  glyph_offset:
+    x: 0
+    y: 0
+  italic:
+    family: Hack
+    style: Italic
+  normal:
+    family: Hack
+    style: Regular
+  offset:
+    x: 0
+    y: 0
+  size: 9.5
+key_bindings:
+- action: Paste
+  key: V
+  mods: Control|Shift
+- action: Copy
+  key: C
+  mods: Control|Shift
+- action: PasteSelection
+  key: Insert
+  mods: Shift
+- action: ResetFontSize
+  key: Key0
+  mods: Control
+- action: IncreaseFontSize
+  key: Equals
+  mods: Control
+- action: IncreaseFontSize
+  key: Add
+  mods: Control
+- action: DecreaseFontSize
+  key: Subtract
+  mods: Control
+- action: DecreaseFontSize
+  key: Minus
+  mods: Control
+- action: ToggleFullscreen
+  key: Return
+  mods: Alt
+- action: Paste
+  key: Paste
+- action: Copy
+  key: Copy
+- action: ClearLogNotice
+  key: L
+  mods: Control
+- chars: "\f"
+  key: L
+  mods: Control
+- action: ScrollPageUp
+  key: PageUp
+  mode: ~Alt
+  mods: Shift
+- action: ScrollPageDown
+  key: PageDown
+  mode: ~Alt
+  mods: Shift
+- action: ScrollToTop
+  key: Home
+  mode: ~Alt
+  mods: Shift
+- action: ScrollToBottom
+  key: End
+  mode: ~Alt
+  mods: Shift
+live_config_reload: false
+mouse:
+  double_click:
+    threshold: 300
+  hide_when_typing: false
+  triple_click:
+    threshold: 300
+  url:
+    launcher:
+      program: xdg-open
+    modifiers: None
+mouse_bindings:
+- action: PasteSelection
+  mouse: Middle
+scrolling:
+  auto_scroll: false
+  history: 2500
+  multiplier: 3
+selection:
+  save_to_clipboard: false
+  semantic_escape_chars: ",\u2502`|:\"' ()[]{}<>\t"
+tabspaces: 4
+visual_bell:
+  animation: EaseOutExpo
+  color: '0xffffff'
+  duration: 0
+window:
+  decorations: full
+  dimensions:
+    columns: 80
+    lines: 24
+  dynamic_padding: false
+  padding:
+    x: 10
+    y: 10
+  startup_mode: Windowed
+working_directory: None
