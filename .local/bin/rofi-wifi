@@ -1,0 +1,53 @@
+#!/bin/bash
+
+choice=
+mesg_arg=
+mesg=
+if [ "$(nmcli radio wifi)" = "enabled" ]; then
+  current="$(nmcli -g IN-USE,SSID device wifi list | grep \*)"
+  if [ $? -eq 0 ]; then
+    ssid="$(echo $current | cut -d: -f2)"
+    mesg_arg='-mesg'
+    mesg="<i>$ssid</i>"
+  fi
+  choice="$(nmcli -g SSID device wifi list)"
+  if [ -n "$choice" ]; then
+    choice="Turn off wifi\n$choice"
+  else
+    choice="Turn off wifi"
+  fi
+else
+  choice="Turn on wifi"
+fi
+
+cmd=$(echo -e "$choice" | rofi \
+    -dmenu $mesg_arg "$mesg" \
+    -markup-rows \
+    -no-fullscreen \
+    -hide-scrollbar \
+    -location 3 -xoffset -100 -yoffset 24 \
+    -no-custom \
+    -bw 2 \
+    -m -1 \
+    -eh 1 \
+    -width 160 \
+    -theme-str "#mainbox{children: [message,listview];} #element{padding: 2 5;} #window{border: 0; height: 135px; border-radius: 0 0 7 7; font: \"Hack 9\";}" \
+    -color-normal "$BLACK,$FOREGROUND,$BLACK,$DARKGREEN,$FOREGROUND" \
+    -color-window "$BLACK,$FOREGROUND,$BLACK" \
+    -no-config \
+    -no-plugins)
+
+case $cmd in
+  'Turn off wifi') nmcli radio wifi off ;;
+  'Turn on wifi') nmcli radio wifi on ;;
+  '') ;;
+  *)
+    msg="$(nmcli device wifi connect "$cmd")"
+    if echo "$msg" | grep -q Secrets; then
+      pass="$(rofipass "Password for $cmd")"
+      if [ -n "$pass" ]; then
+        nmcli device wifi connect "$cmd" password "$pass"
+      fi
+    fi
+    ;;
+esac

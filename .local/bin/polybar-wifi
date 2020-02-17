@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "$(nmcli radio wifi)" = "enabled" ]; then
+  current="$(nmcli -g IN-USE,SIGNAL device wifi list | grep \*)"
+
+  if [[ $? -eq 0 ]]; then
+    signal=$(echo $current | cut -d: -f2)
+    echo "直 $signal%"
+  else
+    echo "直"
+  fi
+else
+  echo "睊"
+fi
+
