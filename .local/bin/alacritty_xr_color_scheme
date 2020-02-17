@@ -32,7 +32,7 @@ colors = {
     },
     "normal": {
         "black": getcolor(b'color0'),
-        "red": getcolor(b'color1'),
+        "red": getcolor(b'color1:'),
         "green": getcolor(b'color2'),
         "yellow": getcolor(b'color3'),
         "blue": getcolor(b'color4'),
